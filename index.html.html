@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tanishq Developers | Professional Web Solutions</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+body{
+    background:#f4f6f9;
+    color:#333;
+    line-height:1.6;
+}
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:#0a2540;
+    color:white;
+    padding:15px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
+nav h1{font-size:26px;}
+nav ul{list-style:none; display:flex;}
+nav ul li{margin-left:25px;}
+nav ul li a:hover{border-bottom:2px solid white;}
+
+/* HERO */
+.hero{
+    height:100vh;
+    background:linear-gradient(to right,#0a2540,#1f4fd8);
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+.hero h2{font-size:48px; margin-bottom:15px;}
+.hero p{font-size:20px; margin-bottom:30px;}
+.hero button{
+    padding:15px 35px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    background:white;
+    color:#1f4fd8;
+}
+
+/* SECTIONS */
+section{
+    padding:80px 60px;
+    max-width:1200px;
+    margin:auto;
+}
+section h3{
+    text-align:center;
+    font-size:36px;
+    margin-bottom:40px;
+}
+
+/* SERVICES */
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+.service-box{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+/* STATS */
+.stats{
+    background:#1f4fd8;
+    color:white;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:30px;
+    text-align:center;
+}
+.stat{font-size:40px; font-weight:bold;}
+
+/* PORTFOLIO */
+.portfolio{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+.project{
+    background:white;
+    border-radius:10px;
+    padding:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+.project h4{
+    cursor:pointer;
+    color:#1f4fd8;
+}
+
+/* SUB PROJECTS */
+.sub-projects{
+    display:none;
+    margin-top:10px;
+    list-style:none;
+}
+.sub-projects li{
+    margin:6px 0;
+}
+.sub-projects a{
+    color:#333;
+}
+.sub-projects a:hover{
+    color:#1f4fd8;
+    text-decoration:underline;
+}
+
+/* CONTACT */
+form{
+    max-width:600px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+input, textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border-radius:6px;
+    border:1px solid #ccc;
+}
+form button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:25px;
+    background:#1f4fd8;
+    color:white;
+    font-size:18px;
+}
+
+/* FOOTER */
+footer{
+    background:#0a2540;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h1>Tanishq Developers</h1>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="home">
+    <div>
+        <h2>Tanishq Developers</h2>
+        <p>Building Powerful & Professional Websites</p>
+        <button onclick="scrollToContact()">Contact Us</button>
+    </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+    <h3>Our Services</h3>
+    <div class="services">
+        <div class="service-box">Web Design</div>
+        <div class="service-box">Web Development</div>
+        <div class="service-box">SEO Optimization</div>
+        <div class="service-box">Support</div>
+    </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+    <div><div class="stat" id="clients">0</div>Clients</div>
+    <div><div class="stat" id="projects">0</div>Projects</div>
+    <div><div class="stat" id="years">0</div>Years</div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+    <h3>Our Projects</h3>
+    <div class="portfolio">
+
+        <div class="project">
+            <h4 onclick="toggle('business')">Business Websites ▼</h4>
+            <ul class="sub-projects" id="business">
+                <li><a href="https://example.com" target="_blank">Nature Website</a></li>
+                <li><a href="https://example.com" target="_blank">Tech Website</a></li>
+                <li><a href="https://example.com" target="_blank">Food Website</a></li>
+                <li><a href="https://example.com" target="_blank">Travel Website</a></li>
+                <li><a href="https://example.com" target="_blank">Fitness Website</a></li>
+                <li><a href="https://example.com" target="_blank">Finance Website</a></li>
+                <li><a href="https://example.com" target="_blank">Education Website</a></li>
+                <li><a href="https://example.com" target="_blank">Health Website</a></li>
+                <li><a href="https://example.com" target="_blank">Entertainment Website</a></li>
+            </ul>
+        </div>
+
+        <div class="project">
+            <h4 onclick="toggle('portfolioSites')">Portfolio Websites ▼</h4>
+            <ul class="sub-projects" id="portfolioSites">
+                <li><a href="https://example.com" target="_blank">Artist Portfolio</a></li>
+                <li><a href="https://example.com" target="_blank">Photographer Portfolio</a></li>
+                <li><a href="https://example.com" target="_blank">Designer Portfolio</a></li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h3>Contact Tanishq Developers</h3>
+    <form onsubmit="return sendMessage()">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    © 2026 Tanishq Developers
+</footer>
+
+<script>
+function scrollToContact(){
+    document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+}
+
+function toggle(id){
+    const el = document.getElementById(id);
+    el.style.display = (el.style.display === "block") ? "none" : "block";
+}
+
+let c=0,p=0,y=0;
+let i=setInterval(()=>{
+    if(c<120) clients.innerText=++c;
+    if(p<300) projects.innerText=++p;
+    if(y<8) years.innerText=++y;
+    if(c>=120 && p>=300 && y>=8) clearInterval(i);
+},20);
+
+function sendMessage(){
+    alert("Thank you for contacting Tanishq Developers!");
+    return false;
+}
+</script>
+
+</body>
+</html>
